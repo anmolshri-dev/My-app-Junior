@@ -1,0 +1,22 @@
+name: Build My-app
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-my-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6.0.0
+      - name: setup Node JS
+      - uses: actions/setup-node@v6.0.0
+        with:
+          node-version: 22.x
+
+      - name: Install Dependencies
+        run: npm install
+      - name: Build-My-App
+        run: npm run build
+    
